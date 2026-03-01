@@ -23,3 +23,12 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: SonarCloud Scan
+  uses: SonarSource/sonarcloud-github-action@v2
+  with:
+    args: >
+      -Dsonar.projectKey=23suca37_vf_frontend
+      -Dsonar.organization=23suca37
+  env:
+     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
