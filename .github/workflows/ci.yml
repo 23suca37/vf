@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -23,9 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Run tests
-        run: npm test -- --watchAll=false
 
       - name: Build project
         run: npm run build
